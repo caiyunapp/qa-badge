@@ -12,7 +12,7 @@ application.debug = True
 def index():
     cmd = "cd caiyun-backend-wrapper-new"
     cmd = "%s; source develop; bin/pref-test" % cmd
-    os.system("ssh caiyun@inner.badge.caiyunapp.com '%s'" % cmd)
+    os.system("ssh caiyun@inner.bench.caiyunapp.com '%s'" % cmd)
     return "OK"
 
 def main():
