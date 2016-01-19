@@ -19,7 +19,7 @@ def curtime():
 
 @route('/badges/<path:path>')
 def send_badges(path):
-    return send_from_directory('static/badges', path)
+    return send_from_directory('../../static/badges', path)
 
 
 def main():
