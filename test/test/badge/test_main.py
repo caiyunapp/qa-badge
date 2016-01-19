@@ -2,7 +2,7 @@
 
 import unittest
 import json
-import api.main as main
+import badge.main as main
 
 app = main.application
 
