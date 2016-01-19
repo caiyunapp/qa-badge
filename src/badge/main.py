@@ -2,7 +2,7 @@
 
 from flask import Flask
 
-application = Flask(__name__, static_url_path='')
+application = Flask(__name__)
 route = application.route
 application.debug = True
 
@@ -19,7 +19,7 @@ def curtime():
 
 @route('/badges/<string:repo>/<string:badge>.svg')
 def send_badges(repo, badge):
-    return application.send_static_file('static/badges/%s/%s.svg' % (repo, badge))
+    return application.send_static_file('badges/%s/%s.svg' % (repo, badge))
 
 
 def main():
