@@ -22,7 +22,9 @@ def curtime():
 @route('/badges/<string:repo>/<string:badge>.svg')
 def send_badges(repo, badge):
     root_dir = os.path.dirname(os.getcwd())
-    return send_from_directory(os.path.join(root_dir, 'static', 'badges', repo), '%s.svg' % badge)
+    base_path = os.path.join(root_dir, 'static', 'badges', repo)
+    print base_path
+    return send_from_directory(base_path, '%s.svg' % badge)
 
 def main():
     application.debug = True
