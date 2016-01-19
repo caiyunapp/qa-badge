@@ -2,7 +2,6 @@
 
 if [ -z "$GAIA_ENV" ]; then export GAIA_ENV="dev"; fi
 
-export UWSGI_SET_PH=gaia_home=$GAIA_HOME
 export UWSGI_PYTHONPATH=$PYTHONPATH
 
 ORG=`pwd`
