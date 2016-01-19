@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from flask import Flask, send_static_file
+from flask import Flask
 
 application = Flask(__name__, static_url_path='')
 route = application.route
@@ -19,7 +19,7 @@ def curtime():
 
 @route('/badges/<reponame:string>/<badgename:string>.svg')
 def send_badges(reponame, badgename):
-    return send_static_file('../../static/badges/%s/%s.svg' % (reponame, badgename))
+    return application.send_static_file('../../static/badges/%s/%s.svg' % (reponame, badgename))
 
 
 def main():
