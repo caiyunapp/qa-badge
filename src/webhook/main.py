@@ -10,8 +10,8 @@ application.debug = True
 
 @route('/qps/caiyun-backend-wrapper-new')
 def index():
-    cwd = os.getcwd()
-    cmd = "%s/bin/perf-test" % cwd
+    cwd = os.path.basename(os.getcwd())
+    cmd = "%s/bin/perf-test" % os.path.join(cwd, 'caiyun-backend-wrapper-new')
     os.system("ssh caiyun@inner.bench.caiyunapp.com '%s'" % cmd)
     return "OK"
 
