@@ -58,3 +58,5 @@ target/
 
 #Gaia related
 .py
+
+.idea
