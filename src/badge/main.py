@@ -17,9 +17,9 @@ def curtime():
     return '{"time": "2015-06-22 12:00"}'
 
 
-@route('/badges/<reponame:string>/<badgename:string>.svg')
-def send_badges(reponame, badgename):
-    return application.send_static_file('../../static/badges/%s/%s.svg' % (reponame, badgename))
+@route('/badges/<string:repon>/<string:badge>.svg')
+def send_badges(repo, badge):
+    return application.send_static_file('../../static/badges/%s/%s.svg' % (repo, badge))
 
 
 def main():
