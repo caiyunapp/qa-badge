@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from flask import Flask, send_from_directory
+from flask import Flask, send_static_file
 
 application = Flask(__name__, static_url_path='')
 route = application.route
@@ -17,9 +17,9 @@ def curtime():
     return '{"time": "2015-06-22 12:00"}'
 
 
-@route('/badges/<path:path>')
-def send_badges(path):
-    return send_from_directory('../../static/badges', path)
+@route('/badges/<reponame:string>/<badgename:string>.svg')
+def send_badges(reponame, badgename):
+    return send_static_file('../../static/badges/%s/%s.svg' % (reponame, badgename))
 
 
 def main():
