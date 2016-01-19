@@ -57,6 +57,6 @@ docs/_build/
 target/
 
 #Gaia related
-.py
+.py/
 
-.idea
+.idea/
