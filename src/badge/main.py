@@ -19,7 +19,7 @@ def curtime():
 
 @route('/badges/<string:repo>/<string:badge>.svg')
 def send_badges(repo, badge):
-    return application.send_static_file('../../static/badges/%s/%s.svg' % (repo, badge))
+    return application.send_static_file('static/badges/%s/%s.svg' % (repo, badge))
 
 
 def main():
