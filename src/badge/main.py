@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from flask import Flask
+import os
+
+from flask import Flask, send_from_directory
 
 application = Flask(__name__)
 route = application.route
@@ -19,8 +21,8 @@ def curtime():
 
 @route('/badges/<string:repo>/<string:badge>.svg')
 def send_badges(repo, badge):
-    return application.send_static_file('badges/%s/%s.svg' % (repo, badge))
-
+    root_dir = os.path.dirname(os.getcwd())
+    return send_from_directory(os.path.join(root_dir, 'static', 'badges', repo), '%s.svg' % badge)
 
 def main():
     application.debug = True
