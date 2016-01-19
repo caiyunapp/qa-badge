@@ -2,7 +2,7 @@
 
 from flask import Flask
 
-application = Flask(__name__)
+application = Flask(__name__, static_url_path='/static')
 route = application.route
 application.debug = True
 
