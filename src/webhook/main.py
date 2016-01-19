@@ -10,7 +10,7 @@ application.debug = True
 
 @route('/qps/caiyun-backend-wrapper-new')
 def index():
-    cmd = "source $HOME/.bashrc; cd caiyun-backend-wrapper-new; source $HOME/bin/develop; $PRJ_HOME/bin/pref-test"
+    cmd = "source $HOME/.bashrc; cd $HOME/caiyun-backend-wrapper-new; source $HOME/bin/develop; $PRJ_HOME/bin/pref-test"
     os.system("ssh caiyun@inner.bench.caiyunapp.com '%s'" % cmd)
     return "OK"
 
