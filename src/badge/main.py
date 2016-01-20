@@ -25,7 +25,7 @@ def curtime():
 
 
 @route('/badges/<string:repo>/<string:branch>/<string:badge>.svg')
-@modifiers.cache_for(seconds=120)
+@modifiers.cache_for(seconds=0)
 def send_badges(repo, branch, badge):
     base_path = os.path.join(os.getcwd(), 'static', 'badges', repo, branch)
     print base_path
