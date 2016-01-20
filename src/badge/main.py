@@ -28,7 +28,9 @@ def curtime():
 @modifiers.cache_for(seconds=120)
 def send_badges(repo, branch, badge):
     base_path = os.path.join(os.getcwd(), 'static', 'badges', repo, branch)
+    print base_path
     return send_from_directory(base_path, '%s.svg' % badge)
+
 
 def main():
     application.debug = True
