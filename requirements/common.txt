@@ -1,10 +1,9 @@
 nose
 semver
 PyYAML
-pyCLI
 
 uwsgi
 Flask
-redis
+Flask-WebCache
 
 gaiabase
