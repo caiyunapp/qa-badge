@@ -24,10 +24,10 @@ def curtime():
     return '{"time": "2015-06-22 12:00"}'
 
 
-@route('/badges/<string:repo>/<string:badge>.svg')
+@route('/badges/<string:repo>/<string:branch>/<string:badge>.svg')
 @modifiers.cache_for(seconds=120)
-def send_badges(repo, badge):
-    base_path = os.path.join(os.getcwd(), 'static', 'badges', repo)
+def send_badges(repo, branch, badge):
+    base_path = os.path.join(os.getcwd(), 'static', 'badges', branch, repo)
     return send_from_directory(base_path, '%s.svg' % badge)
 
 def main():
